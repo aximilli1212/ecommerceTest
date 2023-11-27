@@ -18,7 +18,7 @@ interface Colors {
 
 const COLORS: Colors = {
   primary: '#243e4e',
-  secondary: '#DDF0FF',
+  secondary: '#c4dff7',
   tertiary: '#FF7754',
   gray: '#83829A',
   gray2: '#C1C0C8',
