@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
           <Text style={styles.title} numberOfLines={1}>
             {item.title}
           </Text>
-          <Text style={styles.price}>{item.price}</Text>
+          <Text style={styles.price}>€{item.price}</Text>
         </View>
       </View>
     </TouchableOpacity>
