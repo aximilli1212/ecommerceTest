@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/Home/Home';
 import { COLORS } from '../constants';
 import Search from '../screens/Search';
-import ProductDetails from '../screens/ProductDetails';
+import ProductDetails from '../screens/ProductDetails/ProductDetails';
 
 const Tab = createBottomTabNavigator();
 
