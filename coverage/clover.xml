@@ -1,96 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701087976571" clover="3.2.0">
-  <project timestamp="1701087976572" name="All files">
-    <metrics statements="34" coveredstatements="27" conditionals="8" coveredconditionals="8" methods="15" coveredmethods="9" elements="57" coveredelements="44" complexity="0" loc="34" ncloc="34" packages="7" files="12" classes="12"/>
-    <package name="components.ProductCard">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="ProductCard.styles.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/ProductCard/ProductCard.styles.ts">
+<coverage generated="1701124800706" clover="3.2.0">
+  <project timestamp="1701124800706" name="All files">
+    <metrics statements="28" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="7" elements="41" coveredelements="35" complexity="0" loc="28" ncloc="28" packages="4" files="8" classes="8"/>
+    <package name="assets">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="magSearch.png" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/assets/magSearch.png">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="2" type="stmt"/>
-      </file>
-      <file name="ProductCard.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/ProductCard/ProductCard.tsx">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.ProductList">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="ProductList.styles.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/ProductList/ProductList.styles.ts">
+    <package name="components.SearchCard">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="SearchCard.style.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/SearchCard/SearchCard.style.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="ProductList.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/ProductList/ProductList.tsx">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
+      <file name="SearchCard.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/components/SearchCard/SearchCard.tsx">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
       </file>
     </package>
     <package name="constants">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/constants/app.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
       <file name="index.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/constants/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="theme.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/constants/theme.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="44" count="2" type="stmt"/>
-        <line num="71" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="navigation">
-      <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
-      <file name="BottomTabNavigator.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/navigation/BottomTabNavigator.tsx">
-        <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="64" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="screens">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Search.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/Search.tsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="screens.Home">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="Home.styles.js" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/Home/Home.styles.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="2" type="stmt"/>
-      </file>
-      <file name="Home.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/Home/Home.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-      </file>
-    </package>
-    <package name="screens.ProductDetails">
-      <metrics statements="7" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="ProductDetails.styles.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/ProductDetails/ProductDetails.styles.ts">
+    <package name="screens.Search">
+      <metrics statements="16" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+      <file name="Search.styles.ts" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/Search/Search.styles.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="ProductDetails.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/ProductDetails/ProductDetails.tsx">
-        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+      <file name="Search.tsx" path="/Users/aximilli/code/reactNative/ecommerceTestExpo/screens/Search/Search.tsx">
+        <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="6" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
       </file>
     </package>
   </project>

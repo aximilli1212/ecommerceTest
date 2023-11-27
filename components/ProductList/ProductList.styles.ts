@@ -4,8 +4,7 @@ import { SIZES } from '../../constants';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingTop: SIZES.xxLarge,
-    paddingLeft: SIZES.small / 2,
+    paddingTop: SIZES.small,
   },
   loadingContainer: {
     flex: 1,

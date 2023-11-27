@@ -5,6 +5,7 @@ import { Fontisto, Ionicons } from '@expo/vector-icons';
 import styles from './ProductDetails.styles';
 import { COLORS } from '../../constants';
 import { PRODUCT } from '../../constants/app';
+import * as Animatable from 'react-native-animatable';
 
 type RootStackParamList = {
   ProductDetails: {
@@ -25,7 +26,7 @@ const ProductDetails = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <Animatable.View style={styles.container} animation="fadeIn" duration={500}>
       <View style={styles.upperRow}>
         <TouchableOpacity
           testID="back-button"
@@ -63,7 +64,7 @@ const ProductDetails = () => {
           <Fontisto name="shopping-bag" size={24} color={COLORS.lightWhite} />
         </TouchableOpacity>
       </View>
-    </View>
+    </Animatable.View>
   );
 };
 

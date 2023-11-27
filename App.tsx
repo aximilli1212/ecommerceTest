@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import ProductDetails from './screens/ProductDetails/ProductDetails';
+import Search from './screens/Search/Search';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,11 @@ export default function App() {
         <Stack.Screen
           name={'ProductDetails'}
           component={ProductDetails}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={Search}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
