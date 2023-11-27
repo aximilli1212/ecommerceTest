@@ -4,6 +4,7 @@ import styles from './Home.styles';
 
 import React from 'react';
 import ProductList from '../../components/ProductList/ProductList';
+import Search from '../Search/Search';
 
 const HomeScreen = () => {
   return (
@@ -12,11 +13,12 @@ const HomeScreen = () => {
         <View style={styles.appBar}>
           <Text style={styles.headText}>My Product List</Text>
         </View>
-        <ScrollView>
-          {/*Search here*/}
-          {/*ProductList here */}
-          <ProductList />
-        </ScrollView>
+        {/*<ScrollView>*/}
+        {/*Search here*/}
+        {/*<Search />*/}
+        {/*ProductList here */}
+        <ProductList />
+        {/*</ScrollView>*/}
       </View>
     </SafeAreaView>
   );

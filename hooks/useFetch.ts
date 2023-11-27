@@ -2,16 +2,31 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../constants';
 
-const useFetch = () => {
-  const [oneProduct, setOneProduct] = useState({});
-  const [data, setData] = useState([]);
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  imageUrl: string;
+}
+
+const useFetch = (): {
+  data: Product[];
+  loading: boolean;
+  error: any;
+  refetch: () => void;
+  oneProduct: Product | null;
+} => {
+  const [oneProduct, setOneProduct] = useState<Product | null>(null);
+  const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
 
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get<Product[]>(API_URL);
       setData(response.data);
       setLoading(false);
     } catch (error) {
@@ -25,8 +40,8 @@ const useFetch = () => {
   const fetchOne = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${API_URL}/1`);
-      setData(response.data);
+      const response = await axios.get<Product>(`${API_URL}/1`);
+      setOneProduct(response.data);
       setLoading(false);
     } catch (error) {
       console.log(error);

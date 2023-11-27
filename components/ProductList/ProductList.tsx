@@ -24,14 +24,16 @@ const ProductList = () => {
   }
 
   return (
-    <FlatList
-      data={data}
-      numColumns={2}
-      renderItem={({ item }) => <ProductCard item={item} />}
-      contentContainerStyle={styles.container}
-      ItemSeparatorComponent={() => (
-        <View style={styles.separator} />
-      )}></FlatList>
+    <View style={styles.container}>
+      <FlatList
+        data={data}
+        numColumns={2}
+        renderItem={({ item }) => <ProductCard item={item} />}
+        contentContainerStyle={styles.container}
+        ItemSeparatorComponent={() => (
+          <View style={styles.separator} />
+        )}></FlatList>
+    </View>
   );
 };
 
