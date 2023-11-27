@@ -12,6 +12,10 @@ export default function App() {
     regular: require('./assets/fonts/Montserrat-Regular.ttf'),
   });
 
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
