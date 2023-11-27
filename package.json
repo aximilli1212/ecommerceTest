@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test:eslint": "echo \"Running eslint\" && eslint ."
+    "test:eslint": "echo \"Running eslint\" && eslint .",
+    "test:tsc": "echo \"Running typescript check\" && tsc"
   },
   "dependencies": {
     "eslint": "^8.54.0",
@@ -16,7 +17,9 @@
     "expo-status-bar": "~1.6.0",
     "prettier": "^3.1.0",
     "react": "18.2.0",
-    "react-native": "0.72.6"
+    "react-native": "0.72.6",
+    "@types/react": "~18.2.14",
+    "typescript": "^5.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
