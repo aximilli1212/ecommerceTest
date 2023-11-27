@@ -36,7 +36,7 @@ const SearchCard: React.FC<SearchCardProps> = ({ item }) => {
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.productTitle}>{item.title}</Text>
-          <Text style={styles.price}>{item.price}</Text>
+          <Text style={styles.price}>€{item.price}</Text>
         </View>
       </TouchableOpacity>
     </View>

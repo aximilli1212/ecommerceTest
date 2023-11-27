@@ -27,9 +27,12 @@ const Search: React.FC = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get<SearchResult[]>(
-        `${API_URL}/search/${searchKey}`,
+        `${API_URL}?title_contains=${searchKey.toLowerCase()}`,
       );
       setSearchResult(response.data);
+      console.log('response', response.data);
+      console.log('responseKey', searchKey);
+      console.log('responseKey', `${API_URL}?title_contains=${searchKey}`);
     } catch (error) {
       console.log('error', error);
     }
