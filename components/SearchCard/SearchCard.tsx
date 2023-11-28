@@ -3,20 +3,14 @@ import React from 'react';
 import styles from './SearchCard.style';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-
-interface Item {
-  imageUrl: string;
-  title: string;
-  price: number;
-  description?: string;
-}
+import { Product } from '../../types';
 
 interface SearchCardProps {
-  item: Item;
+  item: Product;
 }
 
 type RootStackParamList = {
-  ProductDetails: { item: Item };
+  ProductDetails: { item: Product };
 };
 
 type ProductCardNavigationProp = StackNavigationProp<

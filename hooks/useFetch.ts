@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../constants';
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  imageUrl: string;
-}
+import { Product } from '../types';
 
 const useFetch = (): {
   data: Product[];
