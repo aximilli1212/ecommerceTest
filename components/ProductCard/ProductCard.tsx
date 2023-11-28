@@ -3,11 +3,7 @@ import styles from './ProductCard.styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-type Product = {
-  imageUrl: string;
-  title: string;
-  price: number;
-};
+import { Product } from '../../types';
 
 type ProductCardProps = {
   item: Product;
@@ -15,7 +11,6 @@ type ProductCardProps = {
 
 type RootStackParamList = {
   ProductDetails: { item: Product };
-  // Add other routes here
 };
 
 type ProductCardNavigationProp = StackNavigationProp<

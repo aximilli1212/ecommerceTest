@@ -3,15 +3,15 @@ import { COLORS, SIZES } from '../../constants';
 
 const styles = StyleSheet.create({
   container: {
-    width: 182,
-    height: 240,
+    width: 153,
+    height: 220,
     marginEnd: 12,
     borderRadius: SIZES.medium,
     backgroundColor: COLORS.secondary,
   },
   imageContainer: {
     flex: 1,
-    width: 170,
+    width: 140,
     marginLeft: SIZES.small / 2,
     marginTop: SIZES.small / 2,
     borderRadius: SIZES.small,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   price: {
-    fontFamily: 'bold',
+    fontFamily: 'regular',
     fontSize: SIZES.medium,
     marginBottom: 2,
   },

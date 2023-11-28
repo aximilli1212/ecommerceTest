@@ -4,6 +4,7 @@ import {
   TextInput,
   FlatList,
   Image,
+  Text,
 } from 'react-native';
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
@@ -12,6 +13,7 @@ import styles from './Search.styles';
 import axios from 'axios';
 import { API_URL, COLORS } from '../../constants';
 import SearchCard from '../../components/SearchCard/SearchCard';
+import { ErrorBoundary } from 'react-error-boundary';
 
 interface SearchResult {
   title: string;
@@ -20,6 +22,24 @@ interface SearchResult {
   price: number;
 }
 
+const ErrorFallback = ({
+  error,
+  resetErrorBoundary,
+}: {
+  error: Error;
+  resetErrorBoundary: () => void;
+}) => {
+  return (
+    <View>
+      <Text>Sorry! Something happened</Text>
+      <TouchableOpacity onPress={resetErrorBoundary}>
+        <Feather name="refresh-cw" size={24} color={COLORS.red} />
+        <Text>Try again</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const Search: React.FC = () => {
   const [searchKey, setSearchKey] = useState<string>('');
   const [searchResult, setSearchResult] = useState<SearchResult[]>([]);
@@ -27,50 +47,56 @@ const Search: React.FC = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get<SearchResult[]>(
-        `${API_URL}/search/${searchKey}`,
+        `${API_URL}?title_contains=${searchKey.toLowerCase()}`,
       );
-      setSearchResult(response.data);
+      response?.data && setSearchResult(response.data);
     } catch (error) {
-      console.log('error', error);
+      throw error;
     }
   };
 
   return (
-    <SafeAreaView>
-      <View style={styles.searchContainer}>
-        <View style={styles.searchWrapper}>
-          <TextInput
-            value={searchKey}
-            onChangeText={setSearchKey}
-            placeholder="Find your products ..."
-            style={styles.searchInput}
-          />
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => setSearchResult([])}>
+      <SafeAreaView>
+        <View style={styles.searchContainer}>
+          <View style={styles.searchWrapper}>
+            <TextInput
+              value={searchKey}
+              onChangeText={setSearchKey}
+              placeholder="Find your products ..."
+              style={styles.searchInput}
+            />
+          </View>
+          <View>
+            <TouchableOpacity
+              testID="search-button"
+              style={styles.searchBtn}
+              onPress={() => handleSearch()}>
+              <Feather name="search" size={24} color={COLORS.white} />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View>
-          <TouchableOpacity
-            style={styles.searchBtn}
-            onPress={() => handleSearch()}>
-            <Feather name="search" size={24} color={COLORS.white} />
-          </TouchableOpacity>
-        </View>
-      </View>
 
-      {searchResult.length === 0 ? (
-        <View style={{ flex: 1 }}>
-          <Image
-            source={require('../../assets/magSearch.png')}
-            style={styles.searchImage}
+        {searchResult.length === 0 ? (
+          <View style={{ flex: 1 }}>
+            <Image
+              testID="search-image"
+              source={require('../../assets/magSearch.png')}
+              style={styles.searchImage}
+            />
+          </View>
+        ) : (
+          <FlatList
+            data={searchResult}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({ item }) => <SearchCard item={item} />}
+            style={{ marginHorizontal: 12 }}
           />
-        </View>
-      ) : (
-        <FlatList
-          data={searchResult}
-          keyExtractor={item => item?.title}
-          renderItem={({ item }) => <SearchCard item={item} />}
-          style={{ marginHorizontal: 12 }}
-        />
-      )}
-    </SafeAreaView>
+        )}
+      </SafeAreaView>
+    </ErrorBoundary>
   );
 };
 
