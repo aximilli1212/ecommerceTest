@@ -15,7 +15,6 @@ type ProductCardProps = {
 
 type RootStackParamList = {
   ProductDetails: { item: Product };
-  // Add other routes here
 };
 
 type ProductCardNavigationProp = StackNavigationProp<

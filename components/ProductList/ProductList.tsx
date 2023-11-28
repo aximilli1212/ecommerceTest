@@ -24,7 +24,11 @@ const ProductList = () => {
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary} />
+        <ActivityIndicator
+          testID="loading"
+          size={SIZES.xLarge}
+          color={COLORS.primary}
+        />
       </View>
     );
   }
@@ -44,7 +48,11 @@ const ProductList = () => {
         numColumns={2}
         renderItem={({ item }) => <ProductCard item={item} />}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl
+            testID="refresh"
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
         }
         columnWrapperStyle={{
           justifyContent: 'space-between',

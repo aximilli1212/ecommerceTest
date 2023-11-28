@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -130,7 +130,10 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,19 +149,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,6 +209,7 @@ import { useRoute } from '@react-navigation/native';
 import { Fontisto, Ionicons } from '@expo/vector-icons';
 import styles from './ProductDetails.styles';
 import { COLORS } from '../../constants';
+import { PRODUCT } from '../../constants/app';
 &nbsp;
 type RootStackParamList = {
   ProductDetails: {
@@ -217,15 +224,17 @@ type RootStackParamList = {
 &nbsp;
 type ProductDetailsRouteProp = RouteProp&lt;RootStackParamList, 'ProductDetails'&gt;;
 &nbsp;
-const ProductDetails = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-  const route = <span class="cstat-no" title="statement not covered" >useRoute&lt;ProductDetailsRouteProp&gt;();</span>
-  const { item } = <span class="cstat-no" title="statement not covered" >route.params;</span>
-  const navigation = <span class="cstat-no" title="statement not covered" >useNavigation();</span>
+const ProductDetails = () =&gt; {
+  const route = useRoute&lt;ProductDetailsRouteProp&gt;();
+  const { item } = route.params || <span class="branch-1 cbranch-no" title="branch not covered" >PRODUCT;</span>
+  const navigation = useNavigation();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;View style={styles.container}&gt;
       &lt;View style={styles.upperRow}&gt;
-        &lt;TouchableOpacity onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.goBack()}</span>&gt;
+        &lt;TouchableOpacity
+          testID="back-button"
+          onPress={() =&gt; navigation.goBack()}&gt;
           &lt;Ionicons name="chevron-back-circle" size={30} /&gt;
         &lt;/TouchableOpacity&gt;
       &lt;/View&gt;
@@ -240,7 +249,7 @@ const ProductDetails = <span class="fstat-no" title="function not covered" >()</
         &lt;View style={styles.titleRow}&gt;
           &lt;Text style={styles.title}&gt;{item.title}&lt;/Text&gt;
           &lt;View style={styles.priceWrapper}&gt;
-            &lt;Text style={styles.price}&gt;$ {item.price}&lt;/Text&gt;
+            &lt;Text style={styles.price}&gt;€ {item.price}&lt;/Text&gt;
           &lt;/View&gt;
         &lt;/View&gt;
       &lt;/View&gt;
@@ -271,7 +280,7 @@ export default ProductDetails;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-27T12:26:16.548Z
+                at 2023-11-28T01:14:34.617Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

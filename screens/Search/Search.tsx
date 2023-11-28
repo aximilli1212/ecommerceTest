@@ -29,7 +29,6 @@ const ErrorFallback = ({
   error: Error;
   resetErrorBoundary: () => void;
 }) => {
-  // Customize the error fallback UI
   return (
     <View>
       <Text>Sorry! Something happened</Text>

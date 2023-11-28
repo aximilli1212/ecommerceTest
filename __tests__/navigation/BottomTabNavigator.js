@@ -11,6 +11,6 @@ describe('BottomTabNavigator', () => {
       </NavigationContainer>,
     );
 
-    expect(getByText('Home')).toBeTruthy();
+    expect(getByText('Product List')).toBeTruthy();
   });
 });

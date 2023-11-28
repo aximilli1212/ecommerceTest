@@ -3,10 +3,17 @@ import React from 'react';
 import styles from './Header.styles';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { COLORS, SIZES } from '../../constants';
 
+type RootStackParamList = {
+  Search: undefined;
+};
+
+type HeaderNavigationProp = StackNavigationProp<RootStackParamList, 'Search'>;
+
 const Header = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HeaderNavigationProp>();
 
   return (
     <View>
@@ -29,7 +36,7 @@ const Header = () => {
         <View>
           <TouchableOpacity style={styles.searchBtn}>
             <Ionicons
-              name="camera-outline"
+              name="send-outline"
               size={SIZES.xLarge}
               color={COLORS.white}
             />

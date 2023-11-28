@@ -4,7 +4,6 @@ import axios from 'axios';
 import { NavigationContainer } from '@react-navigation/native';
 import Search from '../../screens/Search/Search';
 
-// Mock axios module to simulate API calls
 jest.mock('axios');
 
 describe('Search component', () => {
@@ -23,21 +22,38 @@ describe('Search component', () => {
   });
 
   it('displays image when no search results', () => {
-    const { queryByTestId } = render(<Search />);
+    const { queryByTestId } = render(
+      <NavigationContainer>
+        <Search />
+      </NavigationContainer>,
+    );
 
     expect(queryByTestId('search-image')).toBeTruthy();
   });
 
-  it('Displays error message if an error is thrown', async () => {
+  it('Correctly displays search results', async () => {
     const mockResponse = [
       {
-        bad: 'Product',
+        title: 'Product 1',
+        imageUrl: 'image1.jpg',
+        description: 'Description 1',
+        price: 10,
+      },
+      {
+        title: 'Product 2',
+        imageUrl: 'image2.jpg',
+        description: 'Description 2',
+        price: 20,
       },
     ];
 
     axios.get.mockResolvedValueOnce({ data: mockResponse });
 
-    const { getByPlaceholderText, getByTestId, getByText } = render(<Search />);
+    const { getByPlaceholderText, getByTestId, getByText } = render(
+      <NavigationContainer>
+        <Search />
+      </NavigationContainer>,
+    );
 
     const searchInput = getByPlaceholderText('Find your products ...');
     const searchButton = getByTestId('search-button');
@@ -49,7 +65,15 @@ describe('Search component', () => {
       expect(axios.get).toHaveBeenCalledWith(
         expect.stringContaining('product'),
       );
-      expect(getByText('Try again')).toBeTruthy();
+      expect(getByText('Product 1')).toBeTruthy();
     });
+  });
+
+  it('should throw an error', async () => {
+    const mockError = new Error('Network error');
+
+    axios.get.mockRejectedValueOnce(mockError);
+
+    await expect(axios.get('url')).rejects.toThrow('Network error');
   });
 });

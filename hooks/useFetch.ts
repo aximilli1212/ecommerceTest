@@ -16,9 +16,7 @@ const useFetch = (): {
   loading: boolean;
   error: any;
   refetch: () => void;
-  oneProduct: Product | null;
 } => {
-  const [oneProduct, setOneProduct] = useState<Product | null>(null);
   const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>(null);
@@ -37,23 +35,8 @@ const useFetch = (): {
     }
   };
 
-  const fetchOne = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get<Product>(`${API_URL}/1`);
-      setOneProduct(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
     fetchProducts();
-    fetchOne();
   }, []);
 
   const refetch = () => {
@@ -61,7 +44,7 @@ const useFetch = (): {
     fetchProducts();
   };
 
-  return { data, loading, error, refetch, oneProduct };
+  return { data, loading, error, refetch };
 };
 
 export default useFetch;

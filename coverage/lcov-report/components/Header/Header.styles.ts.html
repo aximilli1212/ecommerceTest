@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/SearchCard/SearchCard.style.ts</title>
+    <title>Code coverage report for components/Header/Header.styles.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/SearchCard</a> SearchCard.style.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/Header</a> Header.styles.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -110,7 +110,13 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -157,49 +163,61 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { StyleSheet } from 'react-native';
-import { COLORS, SIZES, SHADOWS } from '../../constants';
+import { COLORS, SIZES } from '../../constants';
 &nbsp;
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: SIZES.small,
-    flexDirection: 'row',
-    padding: SIZES.medium,
-    borderRadius: SIZES.small,
-    backgroundColor: '#fff',
-    ...SHADOWS.medium,
-    shadowColor: COLORS.lightWhite,
+    width: '100%',
   },
-  image: {
-    width: 70,
-    backgroundColor: COLORS.secondary,
-    borderRadius: SIZES.medium,
+  welcomeTxt: {
+    fontFamily: 'semiBold',
+    fontWeight: 'bold',
+    fontSize: SIZES.xLarge,
+    color: COLORS.primary,
+    marginTop: SIZES.xLarge,
+    marginHorizontal: SIZES.small,
+  },
+  searchContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
+    backgroundColor: COLORS.secondary,
+    borderRadius: SIZES.medium,
+    marginVertical: SIZES.medium,
+    height: 50,
+    marginHorizontal: SIZES.small,
   },
-  productImg: {
-    width: '100%',
-    height: 65,
-    borderRadius: SIZES.small,
-    resizeMode: 'cover',
+  searchIcon: {
+    marginHorizontal: SIZES.xSmall,
+    color: COLORS.gray,
+    marginTop: SIZES.small,
   },
-  textContainer: {
+  searchWrapper: {
     flex: 1,
-    marginHorizontal: SIZES.medium,
+    backgroundColor: COLORS.secondary,
+    marginRight: SIZES.small,
+    borderRadius: SIZES.small,
   },
-  productTitle: {
-    fontSize: SIZES.medium,
-    fontFamily: 'bold',
-    color: COLORS.primary,
-  },
-  price: {
-    fontSize: SIZES.small + 2,
+  searchInput: {
     fontFamily: 'regular',
-    color: COLORS.primary,
-    marginTop: 3,
+    width: '100%',
+    height: '100%',
+    paddingHorizontal: SIZES.small,
+  },
+  searchBtn: {
+    width: 50,
+    height: '100%',
+    borderRadius: SIZES.medium,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.primary,
   },
 });
 &nbsp;

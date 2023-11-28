@@ -1,37 +1,46 @@
 import React from 'react';
 import ProductDetails from '../../screens/ProductDetails/ProductDetails';
 import { NavigationContainer } from '@react-navigation/native';
+import { render, fireEvent } from '@testing-library/react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: jest.fn(),
+  useRoute: jest.fn(),
+}));
 
 describe('ProductDetails', () => {
-  it('renders product details', async () => {
-    const route = {
-      params: {
-        item: {
-          title: 'Nike',
-          price: 9.99,
-        },
-      },
+  it('renders correctly', () => {
+    const item = {
+      imageUrl: 'image1.jpg',
+      title: 'Product 1',
+      price: 10,
+      description: 'Description 1',
     };
 
-    const component = (
-      <NavigationContainer>
-        <ProductDetails />
-      </NavigationContainer>
-    );
+    useRoute.mockReturnValue({
+      params: {
+        item,
+      },
+    });
 
-    //Add tests : TODO: Add tests
+    const { getByText } = render(<ProductDetails />);
+
+    expect(getByText('Product 1')).toBeTruthy();
+    expect(getByText('€ 10')).toBeTruthy();
+    expect(getByText('Description 1')).toBeTruthy();
   });
 
-  it('calls navigation on back button press', () => {
-    const navigation = {
-      goBack: jest.fn(),
-    };
+  it('navigates back when back button is pressed', () => {
+    const mockGoBack = jest.fn();
+    useNavigation.mockReturnValue({
+      goBack: mockGoBack,
+    });
 
-    const component = (
-      <NavigationContainer>
-        <ProductDetails navigation={navigation} />
-      </NavigationContainer>
-    );
-    console.log(component);
+    const { getByTestId } = render(<ProductDetails />);
+
+    fireEvent.press(getByTestId('back-button'));
+
+    expect(mockGoBack).toHaveBeenCalled();
   });
 });
